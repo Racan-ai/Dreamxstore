@@ -150,7 +150,7 @@ export const HeroSection = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </header>
   );
 };
