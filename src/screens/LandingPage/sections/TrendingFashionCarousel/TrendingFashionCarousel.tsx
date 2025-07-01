@@ -83,8 +83,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
 
       {/* Desktop Layout */}
       <div className="hidden lg:flex items-center h-full">
-        {/* Product Image - Left Side */}
-        <div className="w-1/2 flex justify-center items-center pl-8 xl:pl-16">
+        {/* Product Image - Left Side - Removed padding */}
+        <div className="w-1/2 flex justify-center items-center">
           <div className="relative w-[300px] h-[300px] xl:w-[350px] xl:h-[350px] 2xl:w-[400px] 2xl:h-[400px]">
             <img
               src={currentProduct.image}
@@ -94,8 +94,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Right Side */}
-        <div className="w-1/2 flex flex-col justify-center pl-8 xl:pl-12 pr-8 xl:pr-16">
+        {/* Product Information - Right Side - Removed padding */}
+        <div className="w-1/2 flex flex-col justify-center">
           {/* Brand and Title - Left Aligned */}
           <div className="space-y-2 mb-6">
             <a
@@ -134,8 +134,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Layout - Improved spacing and bottom padding */}
-      <div className="lg:hidden flex flex-col h-full px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16">
+      {/* Mobile Layout - Removed horizontal padding */}
+      <div className="lg:hidden flex flex-col h-full pb-8 sm:pb-12 md:pb-16">
         {/* Product Image - Top with proper spacing */}
         <div className="flex justify-center items-center pt-6 sm:pt-8 pb-4 sm:pb-6">
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px]">
@@ -147,8 +147,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Bottom with proper spacing */}
-        <div className="flex-1 px-2 sm:px-4 space-y-4 sm:space-y-6">
+        {/* Product Information - Bottom with proper spacing - Removed horizontal padding */}
+        <div className="flex-1 space-y-4 sm:space-y-6">
           {/* Brand and Title - Centered on mobile like in the image */}
           <div className="text-center space-y-1 sm:space-y-2">
             <a
