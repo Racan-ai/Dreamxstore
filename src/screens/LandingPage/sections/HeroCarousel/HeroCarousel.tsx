@@ -4,7 +4,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
   const intervalRef = useRef(null);
   const carouselRef = useRef(null);
 
@@ -40,11 +41,6 @@ export const HeroCarousel = () => {
     }
   ];
 
-  // Detect touch device
-  useEffect(() => {
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-  }, []);
-
   // Auto-advance slides every 6 seconds
   useEffect(() => {
     if (!isHovered) {
@@ -60,6 +56,19 @@ export const HeroCarousel = () => {
     };
   }, [isHovered, slides.length]);
 
+  // Handle mouse movement for arrow positioning
+  const handleMouseMove = (e) => {
+    if (carouselRef.current) {
+      const rect = carouselRef.current.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const containerWidth = rect.width;
+      const isLeftSide = mouseX < containerWidth / 2;
+      
+      setShowLeftArrow(isLeftSide);
+      setShowRightArrow(!isLeftSide);
+    }
+  };
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
@@ -69,27 +78,13 @@ export const HeroCarousel = () => {
   };
 
   const handleMouseEnter = () => {
-    if (!isTouchDevice) {
-      setIsHovered(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isTouchDevice) {
-      setIsHovered(false);
-    }
-  };
-
-  // Handle touch events for mobile
-  const handleTouchStart = () => {
     setIsHovered(true);
   };
 
-  const handleTouchEnd = () => {
-    // Keep arrows visible for a short time after touch
-    setTimeout(() => {
-      setIsHovered(false);
-    }, 3000);
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setShowLeftArrow(false);
+    setShowRightArrow(false);
   };
 
   return (
@@ -98,8 +93,7 @@ export const HeroCarousel = () => {
       className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[450px] xl:h-[520px] overflow-hidden z-10"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      onMouseMove={handleMouseMove}
     >
       {/* Slides Container */}
       <div 
@@ -145,26 +139,28 @@ export const HeroCarousel = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows - Always show on touch devices, show on hover for desktop */}
-      {(isHovered || isTouchDevice) && (
+      {/* Navigation Arrows - Show on Hover with fixed positioning */}
+      {isHovered && (
         <>
-          {/* Left Arrow */}
-          <button
-            onClick={prevSlide}
-            className="absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center touch-manipulation"
-            style={{ WebkitTapHighlightColor: 'transparent' }}
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
-          </button>
+          {/* Left Arrow - Shows when hovering on left side */}
+          {showLeftArrow && (
+            <button
+              onClick={prevSlide}
+              className="absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
+            </button>
+          )}
 
-          {/* Right Arrow */}
-          <button
-            onClick={nextSlide}
-            className="absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center touch-manipulation"
-            style={{ WebkitTapHighlightColor: 'transparent' }}
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
-          </button>
+          {/* Right Arrow - Shows when hovering on right side */}
+          {showRightArrow && (
+            <button
+              onClick={nextSlide}
+              className="absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
+            </button>
+          )}
         </>
       )}
 
@@ -174,12 +170,11 @@ export const HeroCarousel = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
               index === currentSlide 
                 ? 'bg-white w-4 sm:w-6' 
                 : 'bg-white/50 hover:bg-white/75'
             }`}
-            style={{ WebkitTapHighlightColor: 'transparent' }}
           />
         ))}
       </div>
