@@ -66,19 +66,19 @@ export const TrendingFashionCarousel = (): JSX.Element => {
       className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden"
       style={{ backgroundColor: currentProduct.backgroundColor }}
     >
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Smaller for mobile/tablet, normal for desktop */}
       <Button
         onClick={prevSlide}
-        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 left-4 sm:left-6 md:left-8 lg:left-[60px] xl:left-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
+        className="absolute w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[68px] lg:h-[68px] top-1/2 -translate-y-1/2 left-4 sm:left-6 md:left-8 lg:left-[60px] xl:left-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
       >
-        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-700" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 text-gray-700" />
       </Button>
 
       <Button
         onClick={nextSlide}
-        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 right-4 sm:right-6 md:right-8 lg:right-[60px] xl:right-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
+        className="absolute w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[68px] lg:h-[68px] top-1/2 -translate-y-1/2 right-4 sm:right-6 md:right-8 lg:right-[60px] xl:right-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
       >
-        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-700" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 text-gray-700" />
       </Button>
 
       {/* Desktop Layout */}
@@ -134,7 +134,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Layout - Matching your image exactly */}
+      {/* Mobile Layout - Matching your image exactly with more bottom margin */}
       <div className="lg:hidden flex flex-col h-full px-4 sm:px-6">
         {/* Product Image - Top */}
         <div className="flex justify-center items-center pt-8 pb-6">
@@ -147,8 +147,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Bottom */}
-        <div className="flex-1 px-4 sm:px-8 pb-16">
+        {/* Product Information - Bottom with increased bottom margin */}
+        <div className="flex-1 px-4 sm:px-8 pb-20 sm:pb-24 md:pb-28">
           {/* Brand and Title - Left Aligned with proper spacing */}
           <div className="mb-4">
             <a
