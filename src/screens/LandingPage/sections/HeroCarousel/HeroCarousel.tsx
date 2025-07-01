@@ -24,21 +24,21 @@ export const HeroCarousel = (): JSX.Element => {
       title: "Urban Style",
       buttonText: "Shop Now",
       link: "/urban-style"
-    }, 
+    },
     {
       id: 3,
       image: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
       title: "Premium Quality",
       buttonText: "Explore",
       link: "/premium-collection"
-    }, 
+    },
     {
       id: 4,
       image: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
       title: "New Arrivals",
       buttonText: "View All",
       link: "/new-arrivals"
-    } 
+    }
   ];
 
   // Auto-advance slides every 6 seconds
@@ -101,7 +101,7 @@ export const HeroCarousel = (): JSX.Element => {
               className="absolute inset-0 block cursor-pointer group"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               
