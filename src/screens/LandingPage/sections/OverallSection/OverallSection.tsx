@@ -21,7 +21,7 @@ export const OverallSection = (): JSX.Element => {
                 <p className="text-xs font-medium tracking-wider uppercase"></p>
               </div>
               <div className="absolute bottom-6 left-4 text-white">
-                <p className="text-xs font-medium tracking-wider uppercase mb-1"></p>
+                <p className="text-xs font-medium tracking-wider uppercase mb-1">F/W 2021</p>
               </div>
             </div>
           </div>
