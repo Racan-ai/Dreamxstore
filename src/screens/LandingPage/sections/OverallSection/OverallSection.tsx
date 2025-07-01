@@ -6,9 +6,9 @@ export const OverallSection = (): JSX.Element => {
     <section className="w-full bg-[#f8f8f8] py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Desktop Layout - Side by Side */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-          {/* Left - Image (Smaller) */}
-          <div className="w-2/5">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
+          {/* Left - Image (Larger) */}
+          <div className="w-1/2 xl:w-[55%]">
             <div className="relative">
               <img
                 src="https://i.pinimg.com/736x/92/9b/df/929bdf0480b8369bf764bd4022539552.jpg"
@@ -27,25 +27,25 @@ export const OverallSection = (): JSX.Element => {
             </div>
           </div>
 
-          {/* Right - Content (Larger) */}
-          <div className="w-3/5 flex flex-col justify-center space-y-8">
-            <div className="space-y-6">
-              <h3 className="text-4xl xl:text-5xl 2xl:text-6xl font-light text-gray-900 leading-tight">
+          {/* Right - Content (Smaller but well-proportioned) */}
+          <div className="w-1/2 xl:w-[45%] flex flex-col justify-center space-y-6 xl:space-y-8">
+            <div className="space-y-4 xl:space-y-6">
+              <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-light text-gray-900 leading-tight">
                 Hey, welcome to DreamX!
               </h3>
               
-              <div className="space-y-6">
-                <p className="text-2xl xl:text-3xl 2xl:text-4xl text-gray-800 leading-relaxed">
+              <div className="space-y-4 xl:space-y-5">
+                <p className="text-lg xl:text-xl 2xl:text-2xl text-gray-800 leading-relaxed">
                   <span className="font-semibold">#GetCustomClothing</span> tailored just for you from your favorite brands and styles.
                 </p>
-                <p className="text-2xl xl:text-3xl 2xl:text-4xl text-gray-800 leading-relaxed">
+                <p className="text-lg xl:text-xl 2xl:text-2xl text-gray-800 leading-relaxed">
                   Discover exclusive, made-for-you fashion picks and personalize your wardrobe like never before.
                 </p>
               </div>
             </div>
 
             <div className="flex justify-start">
-              <Button className="bg-[#f1ff8c] hover:bg-[#e9f87a] text-black font-semibold px-16 py-8 rounded-full text-2xl border border-black transition-all duration-300 hover:scale-105">
+              <Button className="bg-[#f1ff8c] hover:bg-[#e9f87a] text-black font-semibold px-12 xl:px-14 py-6 xl:py-7 rounded-full text-xl xl:text-2xl border border-black transition-all duration-300 hover:scale-105">
                 Join Now
               </Button>
             </div>
