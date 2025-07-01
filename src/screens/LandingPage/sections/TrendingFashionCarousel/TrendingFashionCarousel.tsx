@@ -134,7 +134,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Layout - With significantly more bottom margin */}
+      {/* Mobile Layout - With much more bottom margin to prevent overlap */}
       <div className="lg:hidden flex flex-col h-full px-4 sm:px-6">
         {/* Product Image - Top */}
         <div className="flex justify-center items-center pt-8 pb-6">
@@ -147,8 +147,8 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Bottom with much more bottom margin */}
-        <div className="flex-1 px-4 sm:px-8 pb-32 sm:pb-36 md:pb-40">
+        {/* Product Information - Bottom with massive bottom margin to prevent overlap */}
+        <div className="flex-1 px-4 sm:px-8 pb-48 sm:pb-52 md:pb-56">
           {/* Brand and Title - Left Aligned with proper spacing */}
           <div className="mb-4">
             <a
