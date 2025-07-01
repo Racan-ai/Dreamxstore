@@ -80,7 +80,7 @@ export const HeroCarousel = (): JSX.Element => {
   return (
     <section 
       ref={carouselRef}
-      className="relative w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[450px] xl:h-[520px] overflow-hidden z-10"
+      className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[450px] xl:h-[520px] overflow-hidden z-10"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
