@@ -39,27 +39,27 @@ export const BrandMarquee = (): JSX.Element => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <section className="w-full bg-black py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 overflow-hidden zoom-fix no-scroll-x">
+    <section className="w-full bg-black py-4 sm:py-6 md:py-4 lg:py-6 xl:py-8 overflow-hidden zoom-fix no-scroll-x">
       <div className="relative zoom-fix">
         {/* Marquee Container */}
         <div className="flex animate-marquee items-center zoom-fix">
           {duplicatedBrands.map((brand, index) => (
             <div
               key={`${brand.id}-${index}`}
-              className="flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-6 xl:mx-8 flex items-center justify-center zoom-fix"
+              className="flex-shrink-0 mx-3 sm:mx-4 md:mx-4 lg:mx-6 xl:mx-8 flex items-center justify-center zoom-fix"
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="h-4 sm:h-5 md:h-6 lg:h-7 xl:h-8 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300 zoom-fix"
+                className="h-6 sm:h-8 md:h-6 lg:h-7 xl:h-8 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300 zoom-fix"
               />
             </div>
           ))}
         </div>
 
         {/* Gradient Overlays for smooth fade effect */}
-        <div className="absolute top-0 left-0 w-8 sm:w-10 md:w-12 lg:w-16 xl:w-20 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none zoom-fix" />
-        <div className="absolute top-0 right-0 w-8 sm:w-10 md:w-12 lg:w-16 xl:w-20 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none zoom-fix" />
+        <div className="absolute top-0 left-0 w-8 sm:w-12 md:w-12 lg:w-16 xl:w-20 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none zoom-fix" />
+        <div className="absolute top-0 right-0 w-8 sm:w-12 md:w-12 lg:w-16 xl:w-20 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none zoom-fix" />
       </div>
     </section>
   );

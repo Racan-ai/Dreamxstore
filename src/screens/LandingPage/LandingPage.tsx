@@ -2,6 +2,7 @@ import React from "react";
 import { HeroSection } from "./sections/HeroSection";
 import { HeroCarousel } from "./sections/HeroCarousel";
 import { BrandMarquee } from "./sections/BrandMarquee";
+import { OverallSection } from "./sections/OverallSection";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -17,6 +18,9 @@ export const LandingPage = (): JSX.Element => {
           
           {/* Brand Marquee - Animated brand logos */}
           <BrandMarquee />
+          
+          {/* Overall Section - New section with image and content */}
+          <OverallSection />
         </main>
       </div>
     </div>
