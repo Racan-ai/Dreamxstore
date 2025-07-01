@@ -60,23 +60,24 @@ export const ProductSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full py-6 sm:py-8 md:py-10 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        {/* Category Buttons */}
-        <div className="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        {/* Category Buttons with increased gap */}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           {categories.map((category) => (
             <Button
               key={category.id}
               onClick={() => setActiveCategory(category.name)}
               className={`
-                h-[45px] sm:h-[55px] md:h-[65px] lg:h-[74px]
-                px-6 sm:px-8 md:px-10 lg:px-12
-                rounded-[35px] sm:rounded-[45px] md:rounded-[55px] lg:rounded-[68.9px]
+                h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[74px]
+                px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12
+                rounded-[20px] sm:rounded-[30px] md:rounded-[40px] lg:rounded-[55px] xl:rounded-[68.9px]
                 border border-solid border-black
                 shadow-[0px_4px_10px_#00000040]
                 font-['Inter',Helvetica] font-medium
-                text-lg sm:text-xl md:text-2xl lg:text-[32px]
+                text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[32px]
                 transition-all duration-300
+                whitespace-nowrap
                 ${
                   category.name === activeCategory || category.active
                     ? "bg-[#f1ff8c] text-black hover:bg-[#e9f87a]"
@@ -89,21 +90,21 @@ export const ProductSection = (): JSX.Element => {
           ))}
         </div>
 
-        {/* Section Header */}
-        <div className="flex justify-between items-center mb-4 sm:mb-6">
-          <h2 className="font-['Shinko_Sans-Regular',Helvetica] font-normal text-black text-3xl sm:text-4xl md:text-5xl">
+        {/* Section Header with increased gap */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="font-['Shinko_Sans-Regular',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
             T-shirts For Men
           </h2>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Button
               variant="link"
-              className="font-['Poppins',Helvetica] font-medium text-[#0e6eff] text-lg sm:text-xl md:text-2xl underline p-0 h-auto hover:text-[#0056cc] transition-colors"
+              className="font-['Poppins',Helvetica] font-medium text-[#0e6eff] text-base sm:text-lg md:text-xl lg:text-2xl underline p-0 h-auto hover:text-[#0056cc] transition-colors whitespace-nowrap"
             >
               View More
             </Button>
             <svg 
-              className="w-6 h-6 sm:w-7 sm:h-7 md:w-[30px] md:h-[30px] text-[#0e6eff]" 
+              className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#0e6eff] flex-shrink-0" 
               fill="currentColor" 
               viewBox="0 0 24 24"
             >
@@ -112,16 +113,16 @@ export const ProductSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Products Horizontal Scroll */}
+        {/* Products Horizontal Scroll with increased gap */}
         <div className="relative">
-          <div className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scrollbar-hide pb-4">
+          <div className="flex gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-x-auto scrollbar-hide pb-4">
             {products.map((product) => (
               <Card
                 key={product.id}
-                className="flex-shrink-0 w-[240px] sm:w-[280px] md:w-[320px] lg:w-[350px] border-0 rounded-none overflow-hidden group cursor-pointer"
+                className="flex-shrink-0 w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] border-0 rounded-lg overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-0">
-                  <div className="relative w-full h-[320px] sm:h-[360px] md:h-[400px] lg:h-[420px]">
+                  <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] xl:h-[440px]">
                     {/* Product Image */}
                     <div
                       className="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
@@ -129,32 +130,32 @@ export const ProductSection = (): JSX.Element => {
                     />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                     {/* Heart Icon - Top Right */}
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute top-3 right-3 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full border border-white/30 transition-all duration-300 hover:scale-110"
+                      className="absolute top-3 sm:top-4 right-3 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full border border-white/30 transition-all duration-300 hover:scale-110"
                     >
-                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
                     </Button>
 
-                    {/* View/Arrow Icon - Bottom Right (Circular with up-right arrow) */}
+                    {/* View/Arrow Icon - Positioned relative to text like in reference */}
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute bottom-16 sm:bottom-20 right-3 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full border border-white/30 transition-all duration-300 hover:scale-110 shadow-lg"
+                      className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white hover:bg-gray-100 rounded-full shadow-lg transition-all duration-300 hover:scale-110 border border-gray-200"
                     >
-                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+                      <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-black" />
                     </Button>
 
-                    {/* Product Info - Bottom Left */}
-                    <div className="absolute bottom-3 left-3 text-white">
-                      <h3 className="font-['Poppins',Helvetica] font-medium text-base sm:text-lg md:text-xl mb-1 leading-tight">
+                    {/* Product Info - Bottom Left - Positioned to align with arrow */}
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white max-w-[calc(100%-80px)] sm:max-w-[calc(100%-100px)]">
+                      <h3 className="font-['Poppins',Helvetica] font-medium text-xs sm:text-sm md:text-base lg:text-lg mb-1 leading-tight line-clamp-2">
                         {product.name}
                       </h3>
-                      <p className="font-['Poppins',Helvetica] font-medium text-sm sm:text-base md:text-lg">
+                      <p className="font-['Poppins',Helvetica] font-medium text-xs sm:text-sm md:text-base text-white/90">
                         {product.price}
                       </p>
                     </div>
