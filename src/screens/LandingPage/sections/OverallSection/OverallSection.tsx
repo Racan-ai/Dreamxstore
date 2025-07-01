@@ -17,11 +17,11 @@ export const OverallSection = (): JSX.Element => {
               />
               {/* Overlay Text on Image - Removed OVERALL text */}
               <div className="absolute top-4 left-4 text-white">
-                <p className="text-xs font-medium tracking-wider uppercase">MEN'S COLLECTION</p>
-                <p className="text-xs font-medium tracking-wider uppercase">MASSIMO DUTTI</p>
+                <p className="text-xs font-medium tracking-wider uppercase"></p>
+                <p className="text-xs font-medium tracking-wider uppercase"></p>
               </div>
               <div className="absolute bottom-6 left-4 text-white">
-                <p className="text-xs font-medium tracking-wider uppercase mb-1">F/W 2021</p>
+                <p className="text-xs font-medium tracking-wider uppercase mb-1"></p>
               </div>
             </div>
           </div>
