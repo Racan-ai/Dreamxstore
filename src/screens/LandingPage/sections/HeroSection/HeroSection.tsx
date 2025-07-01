@@ -19,7 +19,7 @@ export const HeroSection = (): JSX.Element => {
   };
 
   return (
-    <header className="sticky top-0 w-full h-[100px] bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
+    <header className="sticky top-0 w-full h-[100px] bg-transparent lg:bg-white/95 lg:backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
       <div className="w-full h-full mx-auto relative flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
