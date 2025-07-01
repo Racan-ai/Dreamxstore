@@ -63,10 +63,10 @@ export const TrendingFashionCarousel = (): JSX.Element => {
 
   return (
     <section 
-      className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden mb-8 sm:mb-12 md:mb-16 lg:mb-20"
+      className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden"
       style={{ backgroundColor: currentProduct.backgroundColor }}
     >
-      {/* Navigation Arrows - Smaller for mobile/tablet, normal for desktop */}
+      {/* Navigation Arrows */}
       <Button
         onClick={prevSlide}
         className="absolute w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[68px] lg:h-[68px] top-1/2 -translate-y-1/2 left-4 sm:left-6 md:left-8 lg:left-[60px] xl:left-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
@@ -83,7 +83,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
 
       {/* Desktop Layout */}
       <div className="hidden lg:flex items-center h-full">
-        {/* Product Image - Left Side - Removed padding */}
+        {/* Product Image - Left Side */}
         <div className="w-1/2 flex justify-center items-center">
           <div className="relative w-[300px] h-[300px] xl:w-[350px] xl:h-[350px] 2xl:w-[400px] 2xl:h-[400px]">
             <img
@@ -94,9 +94,9 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Right Side - Removed padding */}
+        {/* Product Information - Right Side */}
         <div className="w-1/2 flex flex-col justify-center">
-          {/* Brand and Title - Left Aligned */}
+          {/* Brand and Title */}
           <div className="space-y-2 mb-6">
             <a
               href={currentProduct.link}
@@ -111,13 +111,13 @@ export const TrendingFashionCarousel = (): JSX.Element => {
             </h3>
           </div>
 
-          {/* Price - Left Aligned */}
+          {/* Price */}
           <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg xl:text-xl mb-6">
             {currentProduct.price}
             <span className="ml-1">{currentProduct.priceNote}</span>
           </div>
 
-          {/* Shop Now Button - Left Aligned */}
+          {/* Shop Now Button */}
           <div className="mb-6">
             <Button className="w-[200px] h-[60px] xl:w-[240px] xl:h-[70px] bg-white rounded-[30px] xl:rounded-[35px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
               <span className="font-['Inter',Helvetica] font-medium text-black text-xl xl:text-2xl [-webkit-text-stroke:1px_#000000]">
@@ -126,7 +126,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
             </Button>
           </div>
 
-          {/* Color Selector - Left Aligned */}
+          {/* Color Selector */}
           <div 
             className="w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
             style={{ backgroundColor: currentProduct.colorDot }}
@@ -134,9 +134,9 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Layout - Removed horizontal padding */}
-      <div className="lg:hidden flex flex-col h-full pb-8 sm:pb-12 md:pb-16">
-        {/* Product Image - Top with proper spacing */}
+      {/* Mobile Layout */}
+      <div className="lg:hidden flex flex-col h-full">
+        {/* Product Image - Top */}
         <div className="flex justify-center items-center pt-6 sm:pt-8 pb-4 sm:pb-6">
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px]">
             <img
@@ -147,9 +147,9 @@ export const TrendingFashionCarousel = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Product Information - Bottom with proper spacing - Removed horizontal padding */}
+        {/* Product Information - Bottom */}
         <div className="flex-1 space-y-4 sm:space-y-6">
-          {/* Brand and Title - Centered on mobile like in the image */}
+          {/* Brand and Title - Centered */}
           <div className="text-center space-y-1 sm:space-y-2">
             <a
               href={currentProduct.link}
@@ -164,22 +164,20 @@ export const TrendingFashionCarousel = (): JSX.Element => {
             </h3>
           </div>
 
-          {/* Price - Centered on mobile */}
+          {/* Price - Centered */}
           <div className="text-center font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg sm:text-xl">
             {currentProduct.price}
             <span className="ml-1">{currentProduct.priceNote}</span>
           </div>
 
-          {/* Button and Color Dot Row - Centered layout for mobile */}
+          {/* Button and Color Dot Row - Centered */}
           <div className="flex items-center justify-center gap-4 sm:gap-6 pt-2">
-            {/* Shop Now Button - Centered */}
             <Button className="w-[160px] h-[50px] sm:w-[200px] sm:h-[55px] md:w-[220px] md:h-[60px] bg-white rounded-[25px] sm:rounded-[30px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
               <span className="font-['Inter',Helvetica] font-medium text-black text-base sm:text-lg md:text-xl [-webkit-text-stroke:1px_#000000]">
                 Shop Now
               </span>
             </Button>
 
-            {/* Color Selector - Right of button */}
             <div 
               className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out flex-shrink-0"
               style={{ backgroundColor: currentProduct.colorDot }}
