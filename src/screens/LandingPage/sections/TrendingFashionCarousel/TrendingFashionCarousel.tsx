@@ -63,29 +63,29 @@ export const TrendingFashionCarousel = (): JSX.Element => {
 
   return (
     <section 
-      className="relative w-full h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] xl:h-[920px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out"
+      className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden"
       style={{ backgroundColor: currentProduct.backgroundColor }}
     >
       {/* Navigation Arrows */}
       <Button
         onClick={prevSlide}
-        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 left-4 sm:left-6 md:left-8 lg:left-[115px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
+        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 left-4 sm:left-6 md:left-8 lg:left-[60px] xl:left-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
       >
-        <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-gray-700" />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-700" />
       </Button>
 
       <Button
         onClick={nextSlide}
-        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 right-4 sm:right-6 md:right-8 lg:right-[115px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
+        className="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[68px] md:h-[68px] top-1/2 -translate-y-1/2 right-4 sm:right-6 md:right-8 lg:right-[60px] xl:right-[80px] bg-[#dbdbdb33] hover:bg-[#dbdbdb66] rounded-full shadow-[0px_4px_10px_#00000040] flex items-center justify-center p-0 border-0 transition-all duration-300 hover:scale-110 z-10"
       >
-        <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-gray-700" />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-700" />
       </Button>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:flex items-center justify-center h-full px-8 xl:px-16">
+      <div className="hidden lg:flex items-center h-full">
         {/* Product Image - Left Side */}
-        <div className="flex-1 flex justify-center items-center">
-          <div className="relative w-[400px] h-[400px] xl:w-[500px] xl:h-[500px] 2xl:w-[643px] 2xl:h-[643px]">
+        <div className="w-1/2 flex justify-center items-center pl-8 xl:pl-16">
+          <div className="relative w-[300px] h-[300px] xl:w-[350px] xl:h-[350px] 2xl:w-[400px] 2xl:h-[400px]">
             <img
               src={currentProduct.image}
               alt={currentProduct.title}
@@ -95,49 +95,49 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
 
         {/* Product Information - Right Side */}
-        <div className="flex-1 flex flex-col justify-center space-y-6 xl:space-y-8 px-8">
-          {/* Brand and Title */}
-          <div className="space-y-2">
+        <div className="w-1/2 flex flex-col justify-center pl-8 xl:pl-12 pr-8 xl:pr-16">
+          {/* Brand and Title - Left Aligned */}
+          <div className="space-y-2 mb-6">
             <a
               href={currentProduct.link}
               rel="noopener noreferrer"
               target="_blank"
-              className="font-['Poppins',Helvetica] font-normal text-black text-3xl xl:text-4xl 2xl:text-[40px] leading-tight hover:underline transition-all duration-300"
+              className="block font-['Poppins',Helvetica] font-normal text-black text-2xl xl:text-3xl 2xl:text-[36px] leading-tight hover:underline transition-all duration-300"
             >
               {currentProduct.brand}
             </a>
-            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-3xl xl:text-4xl 2xl:text-[40px] leading-tight">
+            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-2xl xl:text-3xl 2xl:text-[36px] leading-tight">
               {currentProduct.title}
             </h3>
           </div>
 
-          {/* Price */}
-          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg xl:text-xl">
+          {/* Price - Left Aligned */}
+          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg xl:text-xl mb-6">
             {currentProduct.price}
             <span className="ml-1">{currentProduct.priceNote}</span>
           </div>
 
-          {/* Shop Now Button */}
-          <div className="flex items-center space-y-4 flex-col items-start">
-            <Button className="w-[250px] h-[70px] xl:w-[282px] xl:h-[85px] bg-white rounded-[35px] xl:rounded-[42.75px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
-              <span className="font-['Inter',Helvetica] font-medium text-black text-2xl xl:text-[32px] [-webkit-text-stroke:1px_#000000]">
+          {/* Shop Now Button - Left Aligned */}
+          <div className="mb-6">
+            <Button className="w-[200px] h-[60px] xl:w-[240px] xl:h-[70px] bg-white rounded-[30px] xl:rounded-[35px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
+              <span className="font-['Inter',Helvetica] font-medium text-black text-xl xl:text-2xl [-webkit-text-stroke:1px_#000000]">
                 Shop Now
               </span>
             </Button>
-
-            {/* Color Selector */}
-            <div 
-              className="w-[60px] h-[60px] xl:w-[78px] xl:h-[77px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
-              style={{ backgroundColor: currentProduct.colorDot }}
-            />
           </div>
+
+          {/* Color Selector - Left Aligned */}
+          <div 
+            className="w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
+            style={{ backgroundColor: currentProduct.colorDot }}
+          />
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden flex flex-col items-center justify-center h-full px-4 sm:px-6 space-y-6 sm:space-y-8">
+      <div className="lg:hidden flex flex-col items-center justify-center h-full px-4 sm:px-6 space-y-4 sm:space-y-6">
         {/* Product Image */}
-        <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px]">
+        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[280px] md:h-[280px]">
           <img
             src={currentProduct.image}
             alt={currentProduct.title}
@@ -146,39 +146,41 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
 
         {/* Product Information */}
-        <div className="text-center space-y-4 sm:space-y-6 max-w-md">
+        <div className="text-left w-full max-w-sm space-y-3 sm:space-y-4">
           {/* Brand and Title */}
-          <div className="space-y-2">
+          <div className="space-y-1">
             <a
               href={currentProduct.link}
               rel="noopener noreferrer"
               target="_blank"
-              className="block font-['Poppins',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl leading-tight hover:underline transition-all duration-300"
+              className="block font-['Poppins',Helvetica] font-normal text-black text-xl sm:text-2xl md:text-3xl leading-tight hover:underline transition-all duration-300"
             >
               {currentProduct.brand}
             </a>
-            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl leading-tight">
+            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-xl sm:text-2xl md:text-3xl leading-tight">
               {currentProduct.title}
             </h3>
           </div>
 
           {/* Price */}
-          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg sm:text-xl">
+          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-base sm:text-lg">
             {currentProduct.price}
             <span className="ml-1">{currentProduct.priceNote}</span>
           </div>
 
-          {/* Shop Now Button and Color Selector */}
-          <div className="flex flex-col items-center space-y-4">
-            <Button className="w-[220px] h-[60px] sm:w-[250px] sm:h-[70px] bg-white rounded-[30px] sm:rounded-[35px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
-              <span className="font-['Inter',Helvetica] font-medium text-black text-xl sm:text-2xl [-webkit-text-stroke:1px_#000000]">
+          {/* Shop Now Button */}
+          <div className="pt-2">
+            <Button className="w-[180px] h-[50px] sm:w-[200px] sm:h-[60px] bg-white rounded-[25px] sm:rounded-[30px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
+              <span className="font-['Inter',Helvetica] font-medium text-black text-lg sm:text-xl [-webkit-text-stroke:1px_#000000]">
                 Shop Now
               </span>
             </Button>
+          </div>
 
-            {/* Color Selector */}
+          {/* Color Selector */}
+          <div className="pt-2">
             <div 
-              className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
+              className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
               style={{ backgroundColor: currentProduct.colorDot }}
             />
           </div>
@@ -186,7 +188,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {products.map((_, index) => (
           <button
             key={index}
