@@ -62,20 +62,20 @@ export const ProductSection = (): JSX.Element => {
   return (
     <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        {/* Category Buttons with increased gap */}
+        {/* Category Buttons - Made smaller */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           {categories.map((category) => (
             <Button
               key={category.id}
               onClick={() => setActiveCategory(category.name)}
               className={`
-                h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[74px]
-                px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12
-                rounded-[20px] sm:rounded-[30px] md:rounded-[40px] lg:rounded-[55px] xl:rounded-[68.9px]
+                h-[35px] sm:h-[40px] md:h-[45px] lg:h-[50px] xl:h-[55px]
+                px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10
+                rounded-[18px] sm:rounded-[20px] md:rounded-[25px] lg:rounded-[30px] xl:rounded-[35px]
                 border border-solid border-black
                 shadow-[0px_4px_10px_#00000040]
                 font-['Inter',Helvetica] font-medium
-                text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[32px]
+                text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
                 transition-all duration-300
                 whitespace-nowrap
                 ${
@@ -113,13 +113,13 @@ export const ProductSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Products Horizontal Scroll with increased gap */}
+        {/* Products Horizontal Scroll with 1px radius */}
         <div className="relative">
           <div className="flex gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-x-auto scrollbar-hide pb-4">
             {products.map((product) => (
               <Card
                 key={product.id}
-                className="flex-shrink-0 w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] border-0 rounded-lg overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
+                className="flex-shrink-0 w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] border-0 rounded-[1px] overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-0">
                   <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] xl:h-[440px]">
