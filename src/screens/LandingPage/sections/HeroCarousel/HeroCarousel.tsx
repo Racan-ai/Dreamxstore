@@ -38,7 +38,7 @@ export const HeroCarousel = (): JSX.Element => {
       title: "New Arrivals",
       buttonText: "View All",
       link: "/new-arrivals"
-    }
+    } 
   ];
 
   // Auto-advance slides every 6 seconds
