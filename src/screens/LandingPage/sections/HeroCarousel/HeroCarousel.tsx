@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
 
-export const HeroCarousel = () => {
+export const HeroCarousel = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(false);
-  const intervalRef = useRef(null);
-  const carouselRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Slide data with high-quality fashion images and hyperlinks
   const slides = [
@@ -57,15 +57,13 @@ export const HeroCarousel = () => {
   }, [isHovered, slides.length]);
 
   // Handle mouse movement for arrow positioning
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (carouselRef.current) {
       const rect = carouselRef.current.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const containerWidth = rect.width;
-      const isLeftSide = mouseX < containerWidth / 2;
-      
-      setShowLeftArrow(isLeftSide);
-      setShowRightArrow(!isLeftSide);
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
     }
   };
 
@@ -77,22 +75,14 @@ export const HeroCarousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setShowLeftArrow(false);
-    setShowRightArrow(false);
-  };
+  const isLeftSide = mousePosition.x < (carouselRef.current?.offsetWidth || 0) / 2;
 
   return (
     <section 
       ref={carouselRef}
       className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[450px] xl:h-[520px] overflow-hidden z-10"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
       {/* Slides Container */}
@@ -108,7 +98,7 @@ export const HeroCarousel = () => {
             {/* Clickable Background Image */}
             <a 
               href={slide.link}
-              className="absolute inset-0 block cursor-pointer group z-0"
+              className="absolute inset-0 block cursor-pointer group"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -121,12 +111,12 @@ export const HeroCarousel = () => {
             
             {/* Buy Now Button - Responsive positioning and sizing */}
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 lg:bottom-10 lg:left-10 z-10">
-              <button 
+              <Button 
                 onClick={() => window.location.href = slide.link}
-                className="bg-white text-[#004d84] hover:bg-gray-50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-sm sm:text-base md:text-lg lg:text-xl font-semibold rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 h-[48px] sm:h-[56px] md:h-[64px] lg:h-[68px] xl:h-[69px] cursor-pointer"
+                className="bg-white text-[#004d84] hover:bg-gray-50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-sm sm:text-base md:text-lg lg:text-xl font-semibold rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 h-[48px] sm:h-[56px] md:h-[64px] lg:h-[68px] xl:h-[69px]"
               >
                 {slide.buttonText}
-              </button>
+              </Button>
             </div>
 
             {/* Title overlay - Responsive sizing */}
@@ -139,27 +129,33 @@ export const HeroCarousel = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows - Show on Hover with fixed positioning */}
+      {/* Navigation Arrows - Show on Hover - Responsive sizing */}
       {isHovered && (
         <>
           {/* Left Arrow - Shows when hovering on left side */}
-          {showLeftArrow && (
-            <button
+          {isLeftSide && (
+            <Button
               onClick={prevSlide}
-              className="absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center"
+              className="absolute top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-20"
+              style={{
+                left: Math.max(16, mousePosition.x - 60),
+              }}
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
-            </button>
+            </Button>
           )}
 
           {/* Right Arrow - Shows when hovering on right side */}
-          {showRightArrow && (
-            <button
+          {!isLeftSide && (
+            <Button
               onClick={nextSlide}
-              className="absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-30 flex items-center justify-center"
+              className="absolute top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white/90 hover:bg-white border-0 rounded-full p-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110 z-20"
+              style={{
+                left: Math.min(mousePosition.x + 16, (carouselRef.current?.offsetWidth || 0) - 64),
+              }}
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 text-gray-800" />
-            </button>
+            </Button>
           )}
         </>
       )}
