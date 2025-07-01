@@ -13,7 +13,7 @@ export const OverallSection = (): JSX.Element => {
               <img
                 src="https://i.pinimg.com/736x/92/9b/df/929bdf0480b8369bf764bd4022539552.jpg"
                 alt="Men's Collection"
-                className="w-full h-[400px] lg:h-[450px] xl:h-[500px] object-cover rounded-lg"
+                className="w-full h-[400px] lg:h-[450px] xl:h-[500px] object-cover"
               />
               {/* Overlay Text on Image - Removed OVERALL text */}
               <div className="absolute top-4 left-4 text-white">
@@ -21,7 +21,7 @@ export const OverallSection = (): JSX.Element => {
                 <p className="text-xs font-medium tracking-wider uppercase"></p>
               </div>
               <div className="absolute bottom-6 left-4 text-white">
-                <p className="text-xs font-medium tracking-wider uppercase mb-1">F/W 2021</p>
+                <p className="text-xs font-medium tracking-wider uppercase mb-1"></p>
               </div>
             </div>
           </div>
@@ -36,8 +36,6 @@ export const OverallSection = (): JSX.Element => {
               <div className="space-y-4 xl:space-y-5">
                 <p className="text-lg xl:text-xl 2xl:text-2xl text-gray-800 leading-relaxed">
                   <span className="font-semibold">#GetCustomClothing</span> tailored just for you from your favorite brands and styles.
-                </p>
-                <p className="text-lg xl:text-xl 2xl:text-2xl text-gray-800 leading-relaxed">
                   Discover exclusive, made-for-you fashion picks and personalize your wardrobe like never before.
                 </p>
               </div>
@@ -58,15 +56,15 @@ export const OverallSection = (): JSX.Element => {
             <img
               src="https://i.pinimg.com/736x/92/9b/df/929bdf0480b8369bf764bd4022539552.jpg"
               alt="Men's Collection"
-              className="w-full h-[250px] sm:h-[300px] object-cover rounded-lg"
+              className="w-full h-[250px] sm:h-[300px] object-cover "
             />
             {/* Overlay Text on Image - Removed OVERALL text */}
             <div className="absolute top-4 left-4 text-white">
-              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase">MEN'S COLLECTION</p>
-              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase">MASSIMO DUTTI</p>
+              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase"></p>
+              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase"></p>
             </div>
             <div className="absolute bottom-4 left-4 text-white">
-              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-1">F/W 2021</p>
+              <p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-1"></p>
             </div>
           </div>
 
