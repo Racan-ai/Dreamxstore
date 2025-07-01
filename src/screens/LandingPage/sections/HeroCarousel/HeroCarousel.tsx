@@ -98,7 +98,7 @@ export const HeroCarousel = (): JSX.Element => {
             {/* Clickable Background Image */}
             <a 
               href={slide.link}
-              className="absolute inset-0 block cursor-pointer group"
+              className="absolute inset-0 block cursor-pointer group z-0"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
