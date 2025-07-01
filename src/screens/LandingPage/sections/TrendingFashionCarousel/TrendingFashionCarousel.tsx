@@ -63,7 +63,7 @@ export const TrendingFashionCarousel = (): JSX.Element => {
 
   return (
     <section 
-      className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden"
+      className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[550px] xl:h-[600px] border border-solid border-[#004d84] transition-colors duration-700 ease-in-out overflow-hidden"
       style={{ backgroundColor: currentProduct.backgroundColor }}
     >
       {/* Navigation Arrows */}
@@ -134,53 +134,54 @@ export const TrendingFashionCarousel = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="lg:hidden flex flex-col items-center justify-center h-full px-4 sm:px-6 space-y-4 sm:space-y-6">
-        {/* Product Image */}
-        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[280px] md:h-[280px]">
-          <img
-            src={currentProduct.image}
-            alt={currentProduct.title}
-            className="w-full h-full object-contain transition-all duration-700 ease-in-out"
-          />
+      {/* Mobile Layout - Matching your image exactly */}
+      <div className="lg:hidden flex flex-col h-full px-4 sm:px-6">
+        {/* Product Image - Top */}
+        <div className="flex justify-center items-center pt-8 pb-6">
+          <div className="relative w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px]">
+            <img
+              src={currentProduct.image}
+              alt={currentProduct.title}
+              className="w-full h-full object-contain transition-all duration-700 ease-in-out"
+            />
+          </div>
         </div>
 
-        {/* Product Information */}
-        <div className="text-left w-full max-w-sm space-y-3 sm:space-y-4">
-          {/* Brand and Title */}
-          <div className="space-y-1">
+        {/* Product Information - Bottom */}
+        <div className="flex-1 px-4 sm:px-8 pb-16">
+          {/* Brand and Title - Left Aligned with proper spacing */}
+          <div className="mb-4">
             <a
               href={currentProduct.link}
               rel="noopener noreferrer"
               target="_blank"
-              className="block font-['Poppins',Helvetica] font-normal text-black text-xl sm:text-2xl md:text-3xl leading-tight hover:underline transition-all duration-300"
+              className="block font-['Poppins',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl leading-tight hover:underline transition-all duration-300 mb-2"
             >
               {currentProduct.brand}
             </a>
-            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-xl sm:text-2xl md:text-3xl leading-tight">
+            <h3 className="font-['Poppins',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl leading-tight">
               {currentProduct.title}
             </h3>
           </div>
 
-          {/* Price */}
-          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-base sm:text-lg">
+          {/* Price - Left Aligned with proper spacing */}
+          <div className="font-['Inter',Helvetica] font-medium text-[#ff4d4d] text-lg sm:text-xl mb-6">
             {currentProduct.price}
             <span className="ml-1">{currentProduct.priceNote}</span>
           </div>
 
-          {/* Shop Now Button */}
-          <div className="pt-2">
-            <Button className="w-[180px] h-[50px] sm:w-[200px] sm:h-[60px] bg-white rounded-[25px] sm:rounded-[30px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
+          {/* Button and Color Dot Row - Matching your image layout */}
+          <div className="flex items-center justify-between">
+            {/* Shop Now Button - Left side */}
+            <Button className="w-[200px] h-[55px] sm:w-[240px] sm:h-[65px] bg-white rounded-[30px] border-2 border-solid border-black hover:bg-gray-50 transition-all duration-300 hover:scale-105">
               <span className="font-['Inter',Helvetica] font-medium text-black text-lg sm:text-xl [-webkit-text-stroke:1px_#000000]">
                 Shop Now
               </span>
             </Button>
-          </div>
 
-          {/* Color Selector */}
-          <div className="pt-2">
+            {/* Color Selector - Right side */}
             <div 
-              className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out"
+              className="w-[45px] h-[45px] sm:w-[55px] sm:h-[55px] rounded-full border-2 border-gray-300 transition-colors duration-700 ease-in-out flex-shrink-0"
               style={{ backgroundColor: currentProduct.colorDot }}
             />
           </div>
