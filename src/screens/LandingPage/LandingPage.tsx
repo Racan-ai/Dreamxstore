@@ -3,6 +3,7 @@ import { HeroSection } from "./sections/HeroSection";
 import { HeroCarousel } from "./sections/HeroCarousel";
 import { BrandMarquee } from "./sections/BrandMarquee";
 import { OverallSection } from "./sections/OverallSection";
+import { ProductSection } from "./sections/ProductSection";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -21,6 +22,9 @@ export const LandingPage = (): JSX.Element => {
           
           {/* Overall Section - New section with image and content */}
           <OverallSection />
+          
+          {/* Product Section - Category buttons and horizontal scroll products */}
+          <ProductSection />
         </main>
       </div>
     </div>
