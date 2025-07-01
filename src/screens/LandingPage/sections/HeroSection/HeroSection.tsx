@@ -19,7 +19,7 @@ export const HeroSection = (): JSX.Element => {
   };
 
   return (
-    <header className="sticky top-0 w-full h-[100px] bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
+    <header className="sticky top-0 w-full h-[100px] bg-white backdrop-blur-md z-[100] border-b border-gray-100 shadow-sm">
       <div className="w-full h-full mx-auto relative flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
@@ -76,20 +76,20 @@ export const HeroSection = (): JSX.Element => {
           className="lg:hidden p-2 h-auto flex-shrink-0"
           onClick={toggleMobileMenu}
         >
-          <Menu className="w-8 h-8 sm:w-10 sm:h-10 text-black" />
+          <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-black" />
         </Button>
       </div>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" 
+          className="fixed inset-0 bg-black bg-opacity-50 z-[150] lg:hidden" 
           onClick={toggleMobileMenu} 
         />
       )}
 
-      {/* Mobile Menu - Fixed positioning */}
-      <div className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 lg:hidden ${
+      {/* Mobile Menu - Fixed positioning with higher z-index */}
+      <div className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[200] lg:hidden ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex flex-col h-full">
@@ -125,13 +125,14 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
           {/* Mobile Menu Content */}
-          <div className="flex-1 px-6 py-12 flex flex-col justify-center">
-            <div className="space-y-8 text-center">
+          <div className="flex-1 px-6 py-8 flex flex-col justify-center">
+            <div className="space-y-6 text-center">
               {navLinks.map((link, index) => (
-                <div key={index} className="border-b border-gray-200 pb-6">
+                <div key={index} className="border-b border-gray-200 pb-4">
                   <Button
                     variant="link"
-                    className="text-2xl font-bold text-black p-0 h-auto font-mono uppercase tracking-wider hover:text-[#004d84] transition-colors"
+                    className="text-xl sm:text-2xl font-bold text-black p-0 h-auto font-mono uppercase tracking-wider hover:text-[#004d84] transition-colors"
+                    onClick={toggleMobileMenu}
                   >
                     {link.text.toUpperCase()}
                   </Button>
@@ -142,7 +143,8 @@ export const HeroSection = (): JSX.Element => {
               <div className="pt-4">
                 <Button
                   variant="link"
-                  className="text-2xl font-bold text-black p-0 h-auto font-mono uppercase tracking-wider hover:text-[#004d84] transition-colors"
+                  className="text-xl sm:text-2xl font-bold text-black p-0 h-auto font-mono uppercase tracking-wider hover:text-[#004d84] transition-colors"
+                  onClick={toggleMobileMenu}
                 >
                   GET STARTED
                 </Button>

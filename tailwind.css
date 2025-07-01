@@ -101,7 +101,7 @@
   header {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 100;
   }
 
   /* Ensure all containers maintain proper width */
@@ -151,10 +151,10 @@
   .sticky-header {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 100;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 1);
     border-bottom: 1px solid rgba(229, 231, 235, 0.8);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }

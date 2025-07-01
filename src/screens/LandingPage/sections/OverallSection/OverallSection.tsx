@@ -12,17 +12,16 @@ export const OverallSection = (): JSX.Element => {
             <div className="relative">
               <img
                 src="https://i.pinimg.com/736x/92/9b/df/929bdf0480b8369bf764bd4022539552.jpg"
-                alt="Men's Collection - Overall"
-                className="w-full h-auto object-cover rounded-lg"
+                alt="Men's Collection"
+                className="w-full h-[400px] lg:h-[450px] xl:h-[500px] object-cover rounded-lg"
               />
-              {/* Overlay Text on Image */}
+              {/* Overlay Text on Image - Removed OVERALL text */}
               <div className="absolute top-4 left-4 text-white">
                 <p className="text-xs font-medium tracking-wider uppercase">MEN'S COLLECTION</p>
                 <p className="text-xs font-medium tracking-wider uppercase">MASSIMO DUTTI</p>
               </div>
               <div className="absolute bottom-6 left-4 text-white">
                 <p className="text-xs font-medium tracking-wider uppercase mb-1">F/W 2021</p>
-                <h2 className="text-4xl xl:text-5xl font-bold tracking-wider uppercase">OVERALL</h2>
               </div>
             </div>
           </div>
@@ -58,17 +57,16 @@ export const OverallSection = (): JSX.Element => {
           <div className="relative">
             <img
               src="https://i.pinimg.com/736x/92/9b/df/929bdf0480b8369bf764bd4022539552.jpg"
-              alt="Men's Collection - Overall"
-              className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg"
+              alt="Men's Collection"
+              className="w-full h-[250px] sm:h-[300px] object-cover rounded-lg"
             />
-            {/* Overlay Text on Image */}
+            {/* Overlay Text on Image - Removed OVERALL text */}
             <div className="absolute top-4 left-4 text-white">
               <p className="text-xs sm:text-sm font-medium tracking-wider uppercase">MEN'S COLLECTION</p>
               <p className="text-xs sm:text-sm font-medium tracking-wider uppercase">MASSIMO DUTTI</p>
             </div>
             <div className="absolute bottom-4 left-4 text-white">
               <p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-1">F/W 2021</p>
-              <h2 className="text-4xl sm:text-5xl font-bold tracking-wider uppercase">OVERALL</h2>
             </div>
           </div>
 
