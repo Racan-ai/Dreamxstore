@@ -4,6 +4,7 @@ import { HeroCarousel } from "./sections/HeroCarousel";
 import { BrandMarquee } from "./sections/BrandMarquee";
 import { OverallSection } from "./sections/OverallSection";
 import { ProductSection } from "./sections/ProductSection";
+import { TrendingFashionCarousel } from "./sections/TrendingFashionCarousel";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -25,6 +26,9 @@ export const LandingPage = (): JSX.Element => {
           
           {/* Product Section - Category buttons and horizontal scroll products */}
           <ProductSection />
+          
+          {/* Trending Fashion Carousel - New carousel section */}
+          <TrendingFashionCarousel />
         </main>
       </div>
     </div>
