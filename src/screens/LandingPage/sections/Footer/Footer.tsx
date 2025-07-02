@@ -66,26 +66,18 @@ export const Footer = (): JSX.Element => {
   ];
 
   return (
-    <footer className="bg-[#2a2a2a] text-white">
+    <footer className="bg-[#2a2a2a] text-white font-['Poppins',sans-serif]">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24">
         {/* Top Section - Logo and Navigation */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
           {/* Logo and Brand Section */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="flex items-center space-x-3">
-              <img
-                src="https://i.postimg.cc/T3dfzRPx/Dream-X-Store.png"
-                alt="Dream X Store"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-              />
-            </div>
-            
             <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-wider">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-['Poppins',sans-serif] font-light tracking-wider">
                 Dream X Store
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-['Poppins',sans-serif] font-light">
                 Elevating fashion through custom clothing and personalized style experiences.
               </p>
             </div>
@@ -112,7 +104,7 @@ export const Footer = (): JSX.Element => {
           <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             {footerSections.map((section) => (
               <div key={section.title} className="space-y-4 sm:space-y-6">
-                <h4 className="text-sm sm:text-base font-semibold tracking-wider text-white uppercase">
+                <h4 className="text-sm sm:text-base font-['Poppins',sans-serif] font-semibold tracking-wider text-white uppercase">
                   {section.title}
                 </h4>
                 <ul className="space-y-2 sm:space-y-3">
@@ -120,7 +112,7 @@ export const Footer = (): JSX.Element => {
                     <li key={link.name}>
                       <Button
                         variant="link"
-                        className="text-gray-300 hover:text-white text-sm sm:text-base font-light p-0 h-auto transition-colors duration-300"
+                        className="text-gray-300 hover:text-white text-sm sm:text-base font-['Poppins',sans-serif] font-light p-0 h-auto transition-colors duration-300"
                         asChild
                       >
                         <a href={link.href}>{link.name}</a>
@@ -138,10 +130,10 @@ export const Footer = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {contactInfo.map((location) => (
               <div key={location.city} className="space-y-3">
-                <h5 className="text-lg sm:text-xl font-semibold text-white">
+                <h5 className="text-lg sm:text-xl font-['Poppins',sans-serif] font-semibold text-white">
                   {location.city}
                 </h5>
-                <div className="space-y-2 text-gray-300 text-sm sm:text-base">
+                <div className="space-y-2 text-gray-300 text-sm sm:text-base font-['Poppins',sans-serif]">
                   <div className="flex items-start space-x-2">
                     <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
@@ -158,24 +150,26 @@ export const Footer = (): JSX.Element => {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Call to Action Section */}
-        <div className="bg-[#f1ff8c] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 mb-8 lg:mb-12">
+      {/* Call to Action Section - Bright Yellow Background */}
+      <div className="bg-[#f1ff8c] py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="text-center space-y-4 sm:space-y-6">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black tracking-wide">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-['Poppins',sans-serif] font-light text-black tracking-wide">
               Let's work <span className="font-semibold">together</span>
             </h3>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 md:gap-12">
               <Button
                 variant="link"
-                className="text-black hover:text-gray-700 text-base sm:text-lg font-medium underline p-0 h-auto transition-colors"
+                className="text-black hover:text-gray-700 text-base sm:text-lg md:text-xl font-['Poppins',sans-serif] font-medium underline p-0 h-auto transition-colors"
                 asChild
               >
                 <a href="/contact">Get in Touch</a>
               </Button>
               <Button
                 variant="link"
-                className="text-black hover:text-gray-700 text-base sm:text-lg font-medium underline p-0 h-auto transition-colors"
+                className="text-black hover:text-gray-700 text-base sm:text-lg md:text-xl font-['Poppins',sans-serif] font-medium underline p-0 h-auto transition-colors"
                 asChild
               >
                 <a href="/careers">Careers</a>
@@ -185,52 +179,94 @@ export const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="border-t border-gray-600 bg-[#1a1a1a]">
+      {/* Bottom Section - Light Gray Background */}
+      <div className="bg-[#f5f5f5] text-black">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright and Company Info */}
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-gray-400 text-sm">
-              <p>©{currentYear} Cline Design</p>
-              <div className="flex space-x-4">
-                <Button
-                  variant="link"
-                  className="text-gray-400 hover:text-white text-sm p-0 h-auto transition-colors"
-                  asChild
-                >
-                  <a href="/terms">Terms of Use</a>
-                </Button>
-                <Button
-                  variant="link"
-                  className="text-gray-400 hover:text-white text-sm p-0 h-auto transition-colors"
-                  asChild
-                >
-                  <a href="/privacy">Privacy Policy</a>
-                </Button>
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-gray-400" />
+            {/* Left Side - Social Icons */}
+            <div className="flex items-center space-x-4">
               <Button
-                variant="link"
-                className="text-gray-400 hover:text-white text-sm font-medium p-0 h-auto transition-colors"
+                variant="ghost"
+                size="icon"
+                className="w-8 h-8 hover:bg-black/10 rounded-none transition-all duration-300"
                 asChild
               >
-                <a href="/newsletter">Subscribe to Newsletter</a>
+                <a href="https://linkedin.com/company/dreamxstore" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <span className="text-black font-bold text-sm">in</span>
+                </a>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-8 h-8 hover:bg-black/10 rounded-none transition-all duration-300"
+                asChild
+              >
+                <a href="https://instagram.com/dreamxstore" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram className="w-4 h-4 text-black" />
+                </a>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-8 h-8 hover:bg-black/10 rounded-none transition-all duration-300"
+                asChild
+              >
+                <a href="https://facebook.com/dreamxstore" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <Facebook className="w-4 h-4 text-black" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Right Side - Contact Info */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 text-sm font-['Poppins',sans-serif]">
+              <div>
+                <p className="font-semibold">Raleigh</p>
+                <p>123 N. Harrington Street</p>
+                <p>Raleigh, NC 27603</p>
+                <p>919.833.4413</p>
+              </div>
+              <div>
+                <p className="font-semibold">Charlotte</p>
+                <p>250 East Peterson Drive</p>
+                <p>Charlotte, NC 28217</p>
+                <p>704.333.7772</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright and Legal Links */}
+          <div className="border-t border-gray-300 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+            <p className="text-sm font-['Poppins',sans-serif] text-gray-600">©{currentYear} Cline Design</p>
+            <div className="flex space-x-4 text-sm font-['Poppins',sans-serif]">
+              <Button
+                variant="link"
+                className="text-gray-600 hover:text-black text-sm p-0 h-auto transition-colors font-['Poppins',sans-serif]"
+                asChild
+              >
+                <a href="/terms">Terms of Use</a>
+              </Button>
+              <Button
+                variant="link"
+                className="text-gray-600 hover:text-black text-sm p-0 h-auto transition-colors font-['Poppins',sans-serif]"
+                asChild
+              >
+                <a href="/privacy">Privacy Policy</a>
               </Button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Large Brand Name at Bottom */}
-      <div className="bg-[#0a0a0a] py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
+      {/* Large "cline" Logo at Bottom */}
+      <div className="bg-[#f5f5f5] pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden">
         <div className="text-center">
-          <h2 className="text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-black text-white/5 tracking-wider select-none">
-            CLINE
-          </h2>
+          <div className="flex items-center justify-center">
+            <img
+              src="https://i.postimg.cc/T3dfzRPx/Dream-X-Store.png"
+              alt="Dream X Store Logo"
+              className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40 w-auto object-contain opacity-20"
+            />
+          </div>
         </div>
       </div>
     </footer>
