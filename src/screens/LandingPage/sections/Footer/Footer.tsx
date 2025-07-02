@@ -217,16 +217,9 @@ export const Footer = (): JSX.Element => {
             {/* Right Side - Contact Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 text-sm font-['Poppins',sans-serif]">
               <div>
-                <p className="font-semibold">Raleigh</p>
-                <p>123 N. Harrington Street</p>
-                <p>Raleigh, NC 27603</p>
-                <p>919.833.4413</p>
               </div>
               <div>
-                <p className="font-semibold">Charlotte</p>
-                <p>250 East Peterson Drive</p>
-                <p>Charlotte, NC 28217</p>
-                <p>704.333.7772</p>
+              <p className="font-semibold">Racan ai X Dream world</p>
               </div>
             </div>
           </div>
