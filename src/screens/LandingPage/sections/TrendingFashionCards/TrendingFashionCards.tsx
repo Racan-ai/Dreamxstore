@@ -49,13 +49,13 @@ export const TrendingFashionCards = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Desktop: Custom Layout - First row (wider left, narrower right), Second row (narrower left, wider right) */}
-        <div className="hidden lg:block">
+        {/* All Screen Sizes: Asymmetric Layout - Same pattern for mobile, tablet, and desktop */}
+        <div className="space-y-4 sm:space-y-6 lg:space-y-6 xl:space-y-8">
           {/* First Row - Wider left card, narrower right card */}
-          <div className="flex gap-6 xl:gap-8 mb-6 xl:mb-8">
+          <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-8">
             {/* Card 1 - Wider (60%) */}
             <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[3]">
-              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+              <CardContent className="p-0 relative h-[120px] sm:h-[180px] md:h-[220px] lg:h-[280px] xl:h-[320px] 2xl:h-[360px]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${trendingCards[0].image})` }}
@@ -65,7 +65,7 @@ export const TrendingFashionCards = (): JSX.Element => {
             
             {/* Card 2 - Narrower (40%) */}
             <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[2]">
-              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+              <CardContent className="p-0 relative h-[120px] sm:h-[180px] md:h-[220px] lg:h-[280px] xl:h-[320px] 2xl:h-[360px]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${trendingCards[1].image})` }}
@@ -75,10 +75,10 @@ export const TrendingFashionCards = (): JSX.Element => {
           </div>
 
           {/* Second Row - Narrower left card, wider right card */}
-          <div className="flex gap-6 xl:gap-8">
+          <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-8">
             {/* Card 3 - Narrower (40%) */}
             <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[2]">
-              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+              <CardContent className="p-0 relative h-[120px] sm:h-[180px] md:h-[220px] lg:h-[280px] xl:h-[320px] 2xl:h-[360px]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${trendingCards[2].image})` }}
@@ -88,7 +88,7 @@ export const TrendingFashionCards = (): JSX.Element => {
             
             {/* Card 4 - Wider (60%) */}
             <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[3]">
-              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+              <CardContent className="p-0 relative h-[120px] sm:h-[180px] md:h-[220px] lg:h-[280px] xl:h-[320px] 2xl:h-[360px]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${trendingCards[3].image})` }}
@@ -96,40 +96,6 @@ export const TrendingFashionCards = (): JSX.Element => {
               </CardContent>
             </Card>
           </div>
-        </div>
-
-        {/* Tablet: 2 columns */}
-        <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-4 md:gap-6">
-          {trendingCards.map((card) => (
-            <Card
-              key={card.id}
-              className="relative overflow-hidden border-0 rounded-lg cursor-pointer"
-            >
-              <CardContent className="p-0 relative h-[250px] md:h-[300px]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${card.image})` }}
-                />
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Mobile: 1 column */}
-        <div className="sm:hidden grid grid-cols-1 gap-4">
-          {trendingCards.map((card) => (
-            <Card
-              key={card.id}
-              className="relative overflow-hidden border-0 rounded-lg cursor-pointer"
-            >
-              <CardContent className="p-0 relative h-[200px]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${card.image})` }}
-                />
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </div>
     </section>
