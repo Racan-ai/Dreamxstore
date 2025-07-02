@@ -6,6 +6,7 @@ import { OverallSection } from "./sections/OverallSection";
 import { ProductSection } from "./sections/ProductSection";
 import { TrendingFashionCarousel } from "./sections/TrendingFashionCarousel";
 import { TrendingFashionCards } from "./sections/TrendingFashionCards";
+import { Footer } from "./sections/Footer";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -34,6 +35,9 @@ export const LandingPage = (): JSX.Element => {
           {/* Trending Fashion Cards - New cards section */}
           <TrendingFashionCards />
         </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );

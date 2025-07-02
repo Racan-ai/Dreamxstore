@@ -95,6 +95,33 @@
     position: relative;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  }
+
+  /* Fashion-forward typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .font-fashion {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .font-modern {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .font-accent {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   /* Ensure proper stacking context for fixed header */
@@ -168,6 +195,40 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Fashion-forward button styles */
+  .btn-fashion {
+    @apply bg-[#f1ff8c] hover:bg-[#e9f87a] text-black font-medium border border-black transition-all duration-300 hover:scale-105;
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Elegant card styles */
+  .card-elegant {
+    @apply bg-white/95 backdrop-blur-sm border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Typography utilities */
+  .text-fashion-heading {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .text-fashion-body {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+
+  .text-fashion-accent {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
 }
 
 @layer utilities {
@@ -201,7 +262,24 @@
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
+
+  /* Fashion-forward spacing */
+  .space-fashion {
+    @apply space-y-8 lg:space-y-12;
+  }
+
+  /* Elegant shadows */
+  .shadow-elegant {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-elegant-hover {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+  }
 }
+
+/* Import fashion-forward fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Media queries for different screen sizes */
 @media screen and (min-width: 320px) and (max-width: 1920px) {
