@@ -77,9 +77,6 @@ export const Footer = (): JSX.Element => {
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-['Poppins',sans-serif] font-light tracking-wider">
                 Dream X Store
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-['Poppins',sans-serif] font-light">
-                Elevating fashion through custom clothing and personalized style experiences.
-              </p>
             </div>
 
             {/* Social Media Links */}
@@ -255,17 +252,18 @@ export const Footer = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Large "cline" Logo at Bottom */}
-      <div className="bg-[#f5f5f5] pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden">
-        <div className="text-center">
-          <div className="flex items-center justify-center">
-            <img
-              src="https://i.postimg.cc/T3dfzRPx/Dream-X-Store.png"
-              alt="Dream X Store Logo"
-              className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40 w-auto object-contain opacity-20"
-            />
+        {/* Large Dream X Store Logo at Bottom - Black Version */}
+        <div className="pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden">
+          <div className="text-center">
+            <div className="flex items-center justify-center">
+              <img
+                src="https://i.postimg.cc/xTVNmCps/Dream-X-Store.png"
+                alt="Dream X Store Logo"
+                className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40 w-auto object-contain opacity-30 filter brightness-0"
+                style={{ filter: 'brightness(0) opacity(0.3)' }}
+              />
+            </div>
           </div>
         </div>
       </div>
