@@ -7,6 +7,7 @@ import { ProductSection } from "./sections/ProductSection";
 import { TrendingFashionCarousel } from "./sections/TrendingFashionCarousel";
 import { TrendingFashionCards } from "./sections/TrendingFashionCards";
 import { Footer } from "./sections/Footer";
+import { FloatingChatButton } from "./sections/FloatingChatButton";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -38,6 +39,9 @@ export const LandingPage = (): JSX.Element => {
 
         {/* Footer */}
         <Footer />
+
+        {/* Floating Chat Button */}
+        <FloatingChatButton />
       </div>
     </div>
   );

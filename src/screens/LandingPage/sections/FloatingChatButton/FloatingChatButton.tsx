@@ -1,0 +1,68 @@
+import React, { useState } from "react";
+import { Button } from "../../../../components/ui/button";
+import { MessageCircle, X } from "lucide-react";
+
+export const FloatingChatButton = (): JSX.Element => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleChatClick = () => {
+    // Open the chatbot in a new tab
+    window.open("https://chat-with-racan.vercel.app", "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <>
+      {/* Fixed Floating Chat Button */}
+      <Button
+        onClick={handleChatClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10 lg:bottom-12 lg:right-12 xl:bottom-16 xl:right-16 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:w-24 xl:h-24 bg-[#f1ff8c] hover:bg-[#e9f87a] border-2 border-black rounded-full p-0 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"
+        aria-label="Open Chat"
+      >
+        {/* Chat Icon - Pink/Magenta Color */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          {/* Main Chat Icon */}
+          <MessageCircle 
+            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-11 xl:h-11 text-[#ff1493] transition-transform duration-300 group-hover:scale-110" 
+            fill="#ff1493"
+          />
+          
+          {/* Notification Dot */}
+          <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#ff1493] border-2 border-white rounded-full animate-pulse"></div>
+        </div>
+      </Button>
+
+      {/* Tooltip */}
+      {isHovered && (
+        <div className="fixed bottom-20 right-6 sm:bottom-24 sm:right-8 md:bottom-28 md:right-10 lg:bottom-32 lg:right-12 xl:bottom-40 xl:right-16 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-40 animate-in fade-in-0 slide-in-from-bottom-2 duration-200">
+          Chat with Racan AI
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+        </div>
+      )}
+
+      {/* Ripple Effect on Click */}
+      <style jsx>{`
+        @keyframes ripple {
+          0% {
+            transform: scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+        
+        .ripple-effect {
+          position: absolute;
+          border-radius: 50%;
+          background-color: rgba(241, 255, 140, 0.6);
+          transform: scale(0);
+          animation: ripple 0.6s linear;
+          pointer-events: none;
+        }
+      `}</style>
+    </>
+  );
+};
