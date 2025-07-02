@@ -49,22 +49,53 @@ export const TrendingFashionCards = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Desktop: 2x2 Grid Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-6 xl:gap-8">
-          {trendingCards.map((card) => (
-            <Card
-              key={card.id}
-              className="relative overflow-hidden border-0 rounded-lg cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
-              <CardContent className="p-0 relative h-[300px] xl:h-[350px] 2xl:h-[400px]">
-                {/* Clean Image - No overlays or filters */}
+        {/* Desktop: Custom Layout - First row (wider left, narrower right), Second row (narrower left, wider right) */}
+        <div className="hidden lg:block">
+          {/* First Row - Wider left card, narrower right card */}
+          <div className="flex gap-6 xl:gap-8 mb-6 xl:mb-8">
+            {/* Card 1 - Wider (60%) */}
+            <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[3]">
+              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${card.image})` }}
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${trendingCards[0].image})` }}
                 />
               </CardContent>
             </Card>
-          ))}
+            
+            {/* Card 2 - Narrower (40%) */}
+            <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[2]">
+              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${trendingCards[1].image})` }}
+                />
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Second Row - Narrower left card, wider right card */}
+          <div className="flex gap-6 xl:gap-8">
+            {/* Card 3 - Narrower (40%) */}
+            <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[2]">
+              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${trendingCards[2].image})` }}
+                />
+              </CardContent>
+            </Card>
+            
+            {/* Card 4 - Wider (60%) */}
+            <Card className="relative overflow-hidden border-0 rounded-lg cursor-pointer flex-[3]">
+              <CardContent className="p-0 relative h-[280px] xl:h-[320px] 2xl:h-[360px]">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${trendingCards[3].image})` }}
+                />
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Tablet: 2 columns */}
@@ -72,12 +103,11 @@ export const TrendingFashionCards = (): JSX.Element => {
           {trendingCards.map((card) => (
             <Card
               key={card.id}
-              className="relative overflow-hidden border-0 rounded-lg cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="relative overflow-hidden border-0 rounded-lg cursor-pointer"
             >
               <CardContent className="p-0 relative h-[250px] md:h-[300px]">
-                {/* Clean Image - No overlays or filters */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${card.image})` }}
                 />
               </CardContent>
@@ -90,12 +120,11 @@ export const TrendingFashionCards = (): JSX.Element => {
           {trendingCards.map((card) => (
             <Card
               key={card.id}
-              className="relative overflow-hidden border-0 rounded-lg cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="relative overflow-hidden border-0 rounded-lg cursor-pointer"
             >
               <CardContent className="p-0 relative h-[200px]">
-                {/* Clean Image - No overlays or filters */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${card.image})` }}
                 />
               </CardContent>
