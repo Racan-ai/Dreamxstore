@@ -5,8 +5,8 @@ export const FloatingChatButton = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleChatClick = () => {
-    // Open the chatbot in a new tab
-    window.open("https://chat-with-racan.vercel.app", "_blank", "noopener,noreferrer");
+    // Open the chatbot in the same page
+    window.location.href = "https://chat-with-racan.vercel.app";
   };
 
   return (
