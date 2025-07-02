@@ -7,19 +7,19 @@ export const TrendingFashionCards = (): JSX.Element => {
   const trendingCards = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/2b/44/b6/2b44b6e6835f211cc9fe2faea0dc7c7c.jpg",
     },
     {
       id: 2,
-      image: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/fc/ca/20/fcca20dbcc95b2fb7cceffe60195a114.jpg",
     },
     {
       id: 3,
-      image: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/42/a9/c5/42a9c547f96b5197ca016fb64bf142b1.jpg",
     },
     {
       id: 4,
-      image: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      image: "https://www.cityapparrels.shop/cdn/shop/files/ALMZV.jpg?height=1018&v=1750023583",
     }
   ];
 

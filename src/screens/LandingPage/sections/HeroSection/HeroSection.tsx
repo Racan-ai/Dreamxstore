@@ -43,8 +43,8 @@ export const HeroSection = (): JSX.Element => {
           ))}
 
           {/* CTA Button - Much smaller text and better proportions */}
-          <Button className="w-[90px] xl:w-[100px] 2xl:w-[110px] h-[30px] xl:h-[32px] 2xl:h-[34px] bg-[#f0ff7f] rounded-[1px] hover:bg-[#e5f570] transition-colors ml-4 xl:ml-6 2xl:ml-8 flex-shrink-0 flex items-center justify-center">
-            <span className="[font-family:'Azeret_Mono',Helvetica] font-normal text-[#004d84] text-[10px] xl:text-[11px] 2xl:text-[12px] whitespace-nowrap leading-none">
+          <Button className="w-[90px] xl:w-[120px] 2xl:w-[110px] h-[30px] xl:h-[42px] 2xl:h-[34px] bg-[#f0ff7f] rounded-[1px] hover:bg-[#e5f570] transition-colors ml-4 xl:ml-6 2xl:ml-8 flex-shrink-0 flex items-center justify-center">
+            <span className="[font-family:'Azeret_Mono',Helvetica] font-normal text-[#004d84] text-[10px] xl:text-[12px] 2xl:text-[12px] whitespace-nowrap leading-none mr-[0px]">
               Get Started
             </span>
           </Button>
@@ -63,8 +63,8 @@ export const HeroSection = (): JSX.Element => {
             <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 xl:w-3 xl:h-3 bg-green-500 border-2 border-white rounded-full shadow-sm"></div>
             
             {/* Hover tooltip */}
-            <div className="absolute top-full right-0 mt-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
-              Profile Settings
+            <div className="absolute top-full right-0 mt-2 w-80 px-1 py-1 bg-gray-900 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap ">
+              Profile
               <div className="absolute -top-1 right-3 w-2 h-2 bg-gray-900 rotate-45"></div>
             </div>
           </div>
