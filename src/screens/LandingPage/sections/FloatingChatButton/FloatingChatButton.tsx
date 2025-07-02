@@ -11,12 +11,12 @@ export const FloatingChatButton = (): JSX.Element => {
 
   return (
     <>
-      {/* Fixed Floating Chat Button */}
+      {/* Fixed Floating Chat Button - Increased bottom margin */}
       <Button
         onClick={handleChatClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10 lg:bottom-12 lg:right-12 xl:bottom-16 xl:right-16 w-14 h-14 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-16 xl:h-16 bg-[#f1ff8c] hover:bg-[#e9f87a] border-2 border-black rounded-full p-0 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"
+        className="fixed bottom-10 right-6 sm:bottom-12 sm:right-8 md:bottom-14 md:right-10 lg:bottom-16 lg:right-12 xl:bottom-20 xl:right-16 w-14 h-14 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-16 xl:h-16 bg-[#f1ff8c] hover:bg-[#e9f87a] border-2 border-black rounded-full p-0 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"
         aria-label="Open Chat"
       >
         {/* Chat Logo */}
@@ -30,9 +30,9 @@ export const FloatingChatButton = (): JSX.Element => {
         </div>
       </Button>
 
-      {/* Tooltip */}
+      {/* Tooltip - Updated positioning to match new button position */}
       {isHovered && (
-        <div className="fixed bottom-20 right-6 sm:bottom-24 sm:right-8 md:bottom-26 md:right-10 lg:bottom-28 lg:right-12 xl:bottom-32 xl:right-16 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-40 animate-in fade-in-0 slide-in-from-bottom-2 duration-200">
+        <div className="fixed bottom-24 right-6 sm:bottom-28 sm:right-8 md:bottom-30 md:right-10 lg:bottom-32 lg:right-12 xl:bottom-36 xl:right-16 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-40 animate-in fade-in-0 slide-in-from-bottom-2 duration-200">
           Chat with Racan AI
           <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
         </div>
